@@ -1,22 +1,30 @@
+const fecha = new Date()
+console.log(fecha)
+
 class Productos {
-    constructor (nombre, precio, cantidad, categoria,) {
+    constructor (nombre, precio) {
         this.nombre = nombre;
         this.precio = precio;
-        this.cantidad = cantidad;
-        this.categoria = categoria;
+    }
+    verProductosEnConsola () {
+        console.log (`El producto ${this.nombre} vale ${this.precio}`)
     }
 }
 
 const carritoDeProductos = []
 
 const productosSeleccionados = () => {
-    let nombreDelProducto = prompt ("Ingrese el producto que desea agregar al carrito.");
-    let preciodelProducto = prompt ("Ingrese el precio del producto.");
-    let cantidadDisponible = prompt ("Ingrese la cantidad disponibles de este producto.");
-    let categoriaDelProducto = prompt ("Ingrese la categoria a la que corresponde el producto.");
-    carritoDeProductos.push (new Productos (productosSeleccionados.nombreDelProducto, productosSeleccionados.preciodelProducto, productosSeleccionados.cantidadDisponible, productosSeleccionados.categoriaDelProducto));
+    const nombreDelProducto = prompt ("Ingrese el producto que desea agregar al carrito.");
+    const preciodelProducto = prompt ("Ingrese el precio del producto.");
+    carritoDeProductos.push ( 
+        new Productos (
+        {nombreDelProducto},
+        {preciodelProducto},
+        )
+    )
 }
 
+productosSeleccionados ();
 productosSeleccionados ();
 
 console.log (carritoDeProductos)
